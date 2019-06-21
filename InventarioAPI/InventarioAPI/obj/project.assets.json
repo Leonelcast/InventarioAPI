@@ -11858,11 +11858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leone\\source\\repos\\InventarioAPI\\InventarioAPI\\InventarioAPI.csproj",
+      "projectUniqueName": "C:\\Users\\leone\\OneDrive\\Documentos\\vs2019Fullstack\\API\\InventarioAPI\\InventarioAPI\\InventarioAPI.csproj",
       "projectName": "InventarioAPI",
-      "projectPath": "C:\\Users\\leone\\source\\repos\\InventarioAPI\\InventarioAPI\\InventarioAPI.csproj",
+      "projectPath": "C:\\Users\\leone\\OneDrive\\Documentos\\vs2019Fullstack\\API\\InventarioAPI\\InventarioAPI\\InventarioAPI.csproj",
       "packagesPath": "C:\\Users\\leone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leone\\source\\repos\\InventarioAPI\\InventarioAPI\\obj\\",
+      "outputPath": "C:\\Users\\leone\\OneDrive\\Documentos\\vs2019Fullstack\\API\\InventarioAPI\\InventarioAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
