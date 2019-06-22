@@ -51,6 +51,29 @@ namespace InventarioAPI.Controllers
             var categoriaDTO = mapper.Map<CategoriaDTO>(categoria);//setea a categoria dto
             return new CreatedAtRouteResult("GetCategoria", new { id = categoria.CodigoCategoria }, categoriaDTO);//devuelve el id que le asigno la DB
         } 
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Put(int id, [FromBody] CategoriaCreacionDTO categoriaActualizar)
+        {
+            var categoria = mapper.Map<Categoria>(categoriaActualizar);
+            categoria.CodigoCategoria = id;
+            contexto.Entry(categoria).State = EntityState.Modified;
+            await contexto.SaveChangesAsync();
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<CategoriaDTO>> Delete(int id)
+        {
+            var codigoCategoria = await contexto.Categorias.Select(x => x.CodigoCategoria)
+                .FirstOrDefaultAsync(x => x == id);
+            if(codigoCategoria == default(int))
+            {
+                return NotFound();
+            }
+            contexto.Remove(new Categoria { CodigoCategoria = id });
+            await contexto.SaveChangesAsync();
+            return NoContent();
+
+        }
         
     }
 }

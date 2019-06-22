@@ -12,3 +12,17 @@ C:\Users\leone\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\
 C:\Users\leone\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.pdb
 C:\Users\leone\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
 C:\Users\leone\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.deps.json
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.json
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.dev.json
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csprojAssemblyReference.cache
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csproj.CoreCompileInputs.cache
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cache
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cs
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfoInputs.cache
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfo.cs
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\leone\OneDrive\Documentos\vs2019Fullstack\API\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
