@@ -11,16 +11,14 @@ using System.Threading.Tasks;
 
 namespace InventarioAPI.Controllers
 {
-    public class TipoEmpaquesController
+    [Route("api/v1/[controller]")]
+    [ApiController]
+    public class TipoEmpaquesController: ControllerBase
     {
-        [Route("api/v1[controller]")]
-        [ApiController]
-        public class tipoEmpaquesController : ControllerBase
-        {
             private readonly InventarioDBContext contexto;
             private readonly IMapper mapper;
 
-            public tipoEmpaquesController(InventarioDBContext contexto, IMapper mapper)
+            public TipoEmpaquesController(InventarioDBContext contexto, IMapper mapper)
             {
                 this.contexto = contexto;
                 this.mapper = mapper;
@@ -81,4 +79,4 @@ namespace InventarioAPI.Controllers
 
         }
     }
-}
+
