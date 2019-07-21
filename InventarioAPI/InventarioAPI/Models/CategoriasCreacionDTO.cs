@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace InventarioAPI.Models
 {
-    public class CategoriaDTO
+    public class CategoriasCreacionDTO
     {
-        public int CodigoCategoria { get; set; }
-        
         public string Descripcion { get; set; }
     }
 }

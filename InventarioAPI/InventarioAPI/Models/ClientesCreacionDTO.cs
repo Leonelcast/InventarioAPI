@@ -9,11 +9,11 @@ namespace InventarioAPI.Models
     public class ClientesCreacionDTO
     {
         
-        [Required]
+        
         public string DPI { get; set; }
-        [Required]
+        
         public string Nombre { get; set; }
-        [Required]
+      
         public string Direccion { get; set; }
     }
 }

@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace InventarioAPI.Models
 {
-    public class CategoriaCreacionDTO
+    public class FacturasCreacionDTO
     {
-        [Required]
-        public string Descripcion { get; set; }
+        public string Nit { get; set; }
+
+        public DateTime Fecha { get; set; }
+
+        public int Total { get; set; }
     }
 }

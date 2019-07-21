@@ -38,11 +38,21 @@ namespace InventarioAPI
             //crear mapeo para cada dto
             services.AddAutoMapper(options =>
             {
-                options.CreateMap<CategoriaCreacionDTO, Categoria>();
+                options.CreateMap<CategoriasCreacionDTO, Categoria>();
                 options.CreateMap<TipoEmpaqueCreacionDTO, TipoEmpaque>();
                 options.CreateMap<ClientesCreacionDTO, Cliente>();
                 options.CreateMap<ProveedorCreacionDTO, Proveedor>();
                 options.CreateMap<ProductoCreacionDTO, Producto>();
+                options.CreateMap<ComprasCreacionDTO, Compra>();
+                options.CreateMap<DetalleComprasCreacionDTO, DetalleCompra>();
+                options.CreateMap<DetalleFacturasCreacionDTO, DetalleFactura>();
+                options.CreateMap<EmailCLientesCreacionDTO, EmailCliente>();
+                options.CreateMap<EmailProveedoresCreacionDTO, EmailProveedor>();
+                options.CreateMap<FacturasCreacionDTO, Factura>();
+                options.CreateMap<InventariosCreacionDTO, Inventario>();
+                options.CreateMap<TelefonoClientesCreacionDTO, TelefonoCliente>();
+                options.CreateMap<TelefonoProveedoresCreacionDTO, TelefonoProveedor>();
+                
              
             });
             services.AddDbContext<InventarioDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));

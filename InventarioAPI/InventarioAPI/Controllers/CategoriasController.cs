@@ -43,7 +43,7 @@ namespace InventarioAPI.Controllers
 
         }
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CategoriaCreacionDTO categoriaCreacion)
+        public async Task<ActionResult> Post([FromBody] CategoriasCreacionDTO categoriaCreacion)
         {
             var categoria = mapper.Map<Categoria>(categoriaCreacion);//mapea el objeto categoria 
             contexto.Add(categoria);//se almacena en la DB
@@ -52,7 +52,7 @@ namespace InventarioAPI.Controllers
             return new CreatedAtRouteResult("GetCategoria", new { id = categoria.CodigoCategoria }, categoriaDTO);//devuelve el id que le asigno la DB
         } 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] CategoriaCreacionDTO categoriaActualizar)
+        public async Task<ActionResult> Put(int id, [FromBody] CategoriasCreacionDTO categoriaActualizar)
         {
             var categoria = mapper.Map<Categoria>(categoriaActualizar);
             categoria.CodigoCategoria = id;

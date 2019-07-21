@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace InventarioAPI.Models
 {
-    public class ClienteDTO
+    public class TelefonoClientesCreacionDTO
     {
+
+
+        public string Numero { get; set; }
+
+        public string Descripcion { get; set; }
+
         public string Nit { get; set; }
-        
-        public string DPI { get; set; }
-        
-        public string Nombre { get; set; }
-        
-        public string Direccion { get; set; }
+
     }
 }

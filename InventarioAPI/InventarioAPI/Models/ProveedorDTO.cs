@@ -9,13 +9,13 @@ namespace InventarioAPI.Models
     public class ProveedorDTO
     {
         public int CodigoProveedor { get; set; }
-        [Required]
+        
         public string Nit { get; set; }
-        [Required]
+        
         public string RazonSocial { get; set; }
-        [Required]
+       
         public string Direccion { get; set; }
-        [Required]
+        
         public string PaginaWeb { get; set; }
         public string ContactoPrincipal { get; set; }
     }

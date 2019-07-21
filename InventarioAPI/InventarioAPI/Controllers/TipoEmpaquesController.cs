@@ -75,6 +75,7 @@ namespace InventarioAPI.Controllers
                 await contexto.SaveChangesAsync();
                 return NoContent();
             }
+        
          
 
         }
