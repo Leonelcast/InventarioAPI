@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,7 @@ namespace InventarioAPI
         {
             //Enlaza el DTO con una entidad para que se puedan manipular 
             //crear mapeo para cada dto
+            services.AddCors();
             services.AddAutoMapper(options =>
             {
                 options.CreateMap<CategoriasCreacionDTO, Categoria>();
@@ -56,7 +58,12 @@ namespace InventarioAPI
              
             });
             services.AddDbContext<InventarioDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+
             services.AddDbContext<InventarioIdentityContext>(options => options.UseSqlServer(Configuration.GetConnectionString("authConnection")));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<InventarioIdentityContext>()
+                .AddDefaultTokenProviders();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => options.TokenValidationParameters
             =new TokenValidationParameters
                 {
@@ -86,6 +93,7 @@ namespace InventarioAPI
 
             app.UseHttpsRedirection();
             app.UseAuthentication();
+            app.UseCors(builder => builder.WithOrigins("*").WithMethods("*").WithHeaders("*"));
             app.UseMvc();
             
         }

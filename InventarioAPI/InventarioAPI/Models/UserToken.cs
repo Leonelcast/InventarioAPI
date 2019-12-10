@@ -7,7 +7,7 @@ namespace InventarioAPI.Models
 {
     public class UserToken
     {
-        public string Tokern { get; set; }
+        public string Token { get; set; }
         public DateTime Expiration { get; set; }
     }
 }

@@ -2,6 +2,8 @@
 using InventarioAPI.Contexts;
 using InventarioAPI.Entities;
 using InventarioAPI.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +15,7 @@ namespace InventarioAPI.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+   
     public class CategoriasController: ControllerBase
     {
         private readonly InventarioDBContext contexto;
@@ -22,11 +25,38 @@ namespace InventarioAPI.Controllers
             this.contexto = contexto;
             this.mapper = mapper;
         }
+        [HttpGet("{numeroDePagina}",Name ="GetCategoriaPage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<CategoriaPaginacionDTO>> GetCategoriasPage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var categoriaPaginacionDTO = new CategoriaPaginacionDTO();
+            var query = contexto.Categorias.AsQueryable();
+            int totalDeRegitros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegitros / cantidadDeRegistros);
+            categoriaPaginacionDTO.Number = numeroDePagina;
+            var categorias = await query.Skip(cantidadDeRegistros * (categoriaPaginacionDTO.Number)).Take(cantidadDeRegistros).ToListAsync();//objetos
+            categoriaPaginacionDTO.content = mapper.Map<List<CategoriaDTO>>(categorias);
+            var categoriasDTO = mapper.Map<List<CategoriaDTO>>(categorias);//se convierten en DTO
+            categoriaPaginacionDTO.TotalPages = totalPaginas;
+          
+            
+            if(numeroDePagina ==0)
+            {
+                categoriaPaginacionDTO.First = true;
+            }
+            else if(numeroDePagina == totalPaginas )
+            {
+                categoriaPaginacionDTO.Last = true;
+            }
+            
+            return categoriaPaginacionDTO;
+        }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get()
         {
-            var categorias = await contexto.Categorias.ToListAsync();//objetos
-            var categoriasDTO = mapper.Map<List<CategoriaDTO>>(categorias);//se convierten en DTO
+            var categorias = await this.contexto.Categorias.ToListAsync();
+            var categoriasDTO = this.mapper.Map<List<CategoriaDTO>>(categorias);
             return categoriasDTO;
         }
         //obtiene un elemento 

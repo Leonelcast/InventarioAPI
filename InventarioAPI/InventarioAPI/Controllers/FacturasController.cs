@@ -27,7 +27,7 @@ namespace InventarioAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FacturaDTO>>> Get()
         {
-            var facturas = await contexto.Facturas.ToListAsync();
+            var facturas = await contexto.Facturas.Include("Clientes").ToListAsync();
             var facturasDTO = mapper.Map<List<FacturaDTO>>(facturas);
             return facturasDTO;
         }
@@ -54,7 +54,7 @@ namespace InventarioAPI.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] FacturasCreacionDTO facturaActualizar)
         {
-            var facturas = mapper.Map<DetalleFacturasCreacionDTO>(facturaActualizar);
+            var facturas = mapper.Map<Factura>(facturaActualizar);
             facturas.NumeroFactura = id;
             contexto.Entry(facturas).State = EntityState.Modified;
             await contexto.SaveChangesAsync();
